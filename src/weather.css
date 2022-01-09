@@ -55,3 +55,13 @@
   color: #9aa0a6;
   text-align: right;
 }
+
+.weatherApp .btn {
+  margin-left: 5px;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.weatherApp .form {
+  border-radius: 5px;
+}

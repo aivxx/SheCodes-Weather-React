@@ -9,9 +9,14 @@ export default function Weather() {
           <input
             type="search"
             placeholder="Search..."
-            classname="form-control"
+            className="form"
+            autoFocus="on"
           />
-          <input type="submit" value="Search" className="btn btn-primary" />
+          <input
+            type="submit"
+            value="Search"
+            className="btn btn-warning btn-sm"
+          />
         </form>
       </div>
       <div className="row">
