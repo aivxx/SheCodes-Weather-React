@@ -1,5 +1,57 @@
 .weatherApp {
   border: 1px solid black;
   max-width: 576px;
+  padding: 16px;
   margin: 5px;
+  background-color: #202124;
+  color: #e8eae8;
+}
+
+.weatherApp h1 {
+  color: #e8eae0;
+  text-align: right;
+  font-size: 22px;
+  line-height: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.weatherApp ul {
+  color: #7696a6;
+}
+
+.weatherApp .currentTemp {
+  display: inline-block;
+  color: #e8eaed;
+  font-size: 48px;
+  line-height: 50px;
+  padding-top: 10px;
+}
+
+.weatherApp p {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  vertical-align: top;
+  padding-left: 6px;
+  padding-top: 12px;
+}
+
+.weatherApp .data {
+  float: none;
+  display: inline-block;
+  line-height: 16px;
+  padding-left: 12px;
+  padding-top: 12px;
+  list-style-type: none;
+  font-size: 12px;
+}
+
+.weatherApp .currentData {
+  list-style-type: none;
+  margin-right: 25px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #9aa0a6;
+  text-align: right;
 }
