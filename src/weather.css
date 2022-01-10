@@ -9,10 +9,10 @@
 
 .weatherApp h1 {
   color: #e8eae0;
-  text-align: center;
-  font-size: 50px;
-  line-height: 45px;
-  margin-left: 15px;
+  text-align: right;
+  font-size: 40px;
+  line-height: 26px;
+  margin-right: 20px;
 }
 
 .weatherApp ul {
@@ -22,7 +22,7 @@
 .weatherApp .currentTemp {
   display: inline-block;
   color: #e8eaed;
-  font-size: 48px;
+  font-size: 50px;
   line-height: 50px;
   padding-top: 10px;
 }
@@ -41,9 +41,9 @@
   display: inline-block;
   line-height: 16px;
   padding-left: 12px;
-  padding-top: 12px;
   list-style-type: none;
   font-size: 12px;
+  vertical-align: top;
 }
 
 .weatherApp .currentData {
@@ -63,8 +63,12 @@
 
 .weatherApp .form {
   border-radius: 5px;
+  margin-bottom: 25px;
 }
 
-.weatherApp img {
-  width: 75px;
+.weatherApp canvas {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  display: inline-block;
 }
