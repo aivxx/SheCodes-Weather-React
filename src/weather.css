@@ -44,6 +44,7 @@
   list-style-type: none;
   font-size: 12px;
   vertical-align: top;
+  padding-top: 12px;
 }
 
 .weatherApp .currentData {
