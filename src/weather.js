@@ -4,10 +4,17 @@ import "./weather.css";
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+  const [weatherData, setWeatherData] = useState({});
   function handleResponse(response) {
     console.log(response.data);
-    setTemperature(response.data.main.temp);
+    setWeatherData({
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
     setReady(true);
   }
 
@@ -31,32 +38,31 @@ export default function Weather() {
         </div>
         <div className="row">
           <div className="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Mostly Cloudy"
-            />
-            <div className="currentTemp">{Math.round(temperature)}</div>
+            <img src={weatherData.iconUrl} alt={weatherData.description} />
+            <div className="currentTemp">
+              {Math.round(weatherData.temperature)}
+            </div>
             <p>°F</p>
             <ul className="data">
-              <li>Precipitation:15%</li>
-              <li>Humidity:68%</li>
-              <li>Wind:14mph</li>
+              <li>Precipitation: 15%</li>
+              <li>Humidity: {weatherData.humidity}%</li>
+              <li>Wind: {weatherData.wind}mph</li>
             </ul>
           </div>
 
           <div className="col-6">
-            <h1>West Palm Beach</h1>
+            <h1 className="text-capitalize">{weatherData.city}</h1>
             <ul className="currentData">
               <li>Wednesday 07:00</li>
-              <li>Mostly Cloudy</li>
+              <li className="text-capitalize">{weatherData.description}</li>
             </ul>
           </div>
         </div>
       </div>
     );
   } else {
-    const apiKey = "04bde8cc7f569f7c5603cdbc6deb89a3";
-    let city = "Miami";
+    const apiKey = `04bde8cc7f569f7c5603cdbc6deb89a3`;
+    let city = `Miami`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
 
